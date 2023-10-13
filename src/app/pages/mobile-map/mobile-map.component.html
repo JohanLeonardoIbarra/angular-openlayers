@@ -1,0 +1,10 @@
+<div class="layout">
+    <mat-toolbar class="nav">
+        <span>Map App</span>
+        <span class="spacer"></span>
+        <button mat-icon-button class="menu-icon" [routerLink]="['mobile', 'menu']">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </mat-toolbar>
+    <app-open-layers (issue)="selectIssue($event)"></app-open-layers>
+</div>

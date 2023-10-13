@@ -1,0 +1,41 @@
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%))
+  &::-webkit-scrollbar
+    width:  $size
+    height: $size
+
+  &::-webkit-scrollbar-thumb
+    background: $foreground-color
+
+  &::-webkit-scrollbar-track
+    background: $background-color
+
+  &
+    scrollbar-face-color: $foreground-color
+    scrollbar-track-color: $background-color
+
+*
+  margin: 0
+  padding: 0
+  @include scrollbars(10px, #888, #aaa)
+
+.layout
+  height: 100vh
+  width: 100vw
+
+.sidebar
+  width: 25%
+
+.spacer
+    flex: 1 1 auto
+
+.menu-icon
+    padding: 10px
+    border: none
+    border-radius: 50%
+    cursor: pointer
+    &:hover
+        background-color: #ddd
+
+@media (max-width: 520px)
+  .sidebar
+      width: 95%

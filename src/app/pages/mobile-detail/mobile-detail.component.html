@@ -1,0 +1,34 @@
+<div class="layout">
+    <mat-toolbar>
+        <span>Map App</span>
+        <span class="spacer"></span>
+        <button mat-icon-button class="menu-icon" (click)="goBack()">
+            <mat-icon>undo</mat-icon>
+        </button>
+    </mat-toolbar>
+    <main *ngIf="issue; else loading">
+        <div [style]="'background-color: ' + issue.typology.color + ';'" class="title-container">
+            <h1><strong>{{issue.service_name}}:</strong> {{issue.typology.typology_description}}</h1>
+        </div>
+        <section class="flex mb-50px">
+            <strong>Direccion: </strong>
+            <hr>
+            <span> {{issue.address}}</span>
+            <strong>Posicion Geografica</strong>
+            <hr>
+            <span>
+                <strong>Lat:</strong>{{issue.lat}}
+                <br>
+                <strong>Lon:</strong>{{issue.long}}
+            </span>
+            <strong>Otros</strong>
+            <hr>
+            <span><strong>Evaluacion: </strong>{{issue.evaluation}}</span>
+        </section>
+    </main>
+    <ng-template #loading>
+        <div class="spinner">
+            <mat-spinner></mat-spinner>
+        </div>
+    </ng-template>
+</div>

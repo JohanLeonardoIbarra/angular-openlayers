@@ -1,0 +1,16 @@
+<mat-drawer-container class="sidenav" autosize>
+    <mat-drawer [style]="'width: ' + width + ';'" #sidenav mode="side" [opened]="alwaysOpen">
+        <ul *ngIf="issues.length; else emptyList">
+            <li *ngFor="let issue of issues" (click)="moveTo(issue)">
+                <span>{{issue.address}}</span>
+            </li>
+        </ul>
+        <ng-template #emptyList>
+            <div class="spinner">
+                <mat-spinner></mat-spinner>
+            </div>
+        </ng-template>
+    </mat-drawer>
+    <ng-content></ng-content>
+</mat-drawer-container>
+  

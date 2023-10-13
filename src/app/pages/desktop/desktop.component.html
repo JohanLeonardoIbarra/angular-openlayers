@@ -1,0 +1,13 @@
+<div (window:resize)="handleWindowResize()" class="layout">
+    <mat-toolbar *ngIf="isMobile">
+        <span>Map App</span>
+        <span class="spacer"></span>
+        <button mat-icon-button class="menu-icon" (click)="toggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </mat-toolbar>
+    <app-sidebar class="sidebar" [opened]="sidebarOpened" [issues]="issues" [width]="sidebarWidth" (moveTo)="changeMapPosition($event)">
+        <app-open-layers (issue)="selectIssue($event)"></app-open-layers>
+    </app-sidebar>
+</div>
+<app-modal></app-modal>

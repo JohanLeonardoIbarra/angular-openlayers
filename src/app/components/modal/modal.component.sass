@@ -1,0 +1,45 @@
+.modal
+    background-color: #00000090
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    top: 0
+    z-index: 10
+    width: 100vw
+    height: 100vh
+
+.modal-body
+    background-color: #fff
+    padding: 20px
+    width: 60%
+    border-radius: 10px
+
+.modal-nav-container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-size: 2em
+    padding: 5px
+    border-radius: 5px
+    line-height: 1.1em
+
+.modal-content
+    margin: 20px 0
+    padding: 5px
+    line-height: 1.3em
+    font-size: 1.5em
+
+.flex
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+.mb-50px
+    margin-bottom: 50px
+
+@media (max-width: 520px)
+    .modal-body
+        width: 95%
+    .flex
+        gap: 20px

@@ -1,0 +1,21 @@
+<div class="modal" *ngIf="issue">
+    <div class="modal-body">
+        <div class="modal-nav-container" [style]="'background-color: ' + issue.typology.color + ';'">
+            <span><strong>{{ issue.service_name| uppercase }}: </strong>{{issue.typology.typology_description}}</span>
+            <button mat-icon-button class="menu-icon" (click)="close()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <div class="modal-content">
+            <div class="flex mb-50px">
+                <span>Direccion: {{issue.address}}</span>
+                <div>
+                    <span><strong>Lat:</strong>{{issue.lat}}</span><br>
+                    <span><strong>Lon:</strong>{{issue.long}}</span>
+                </div>
+            </div>
+            <hr>
+            <span><strong>Evaluacion: </strong>{{issue.evaluation}}</span>
+        </div>
+    </div>
+</div>
